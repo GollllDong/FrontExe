@@ -1,0 +1,13 @@
+h1 {
+    padding: 5px;
+    background-color: black;
+    color: aliceblue;
+    width: 180px;
+}
+.container {
+    width: 500px;
+    margin: 10px auto;
+}
+.co{
+    color: blue;
+}
