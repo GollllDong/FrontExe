@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;      /* 플렉서블 박스 컨테이너 = 플렉스 레이아웃*/
+            background-color: #eee;
+            margin-bottom: 30px;
+            width: 450px;
+            height: 150px;
+            border: 1px solid #923030;
+            align-items: center;
+        }
+        p{
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+        .box{
+            padding: 4px 5px;
+            margin: 5px;
+            background-color: #222;
+        }
+        /* 교차축 정렬을 개별적으로 설정하고 싶을 때 */
+        #box1 {
+            align-self: flex-start;
+        }
+        #box3{
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="opt1">
+        <div class="box" id="box1"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box" id="box3"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+    </div>
+    
+</body>
+</html>
