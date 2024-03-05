@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-columns : 1fr 1ft 1fr */
+            grid-template-rows: minmax(100px, auto);    /* 줄 높이 최소 100px */
+        }
+        .items {
+            padding: 10px;
+            background-color: #eee;
+        }
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="items">It is a long established fact that a reader will be distracted by the  </div>
+        <div class="items">It is a long established fact that a reader will be distracted  </div>
+        <div class="items">It is a long established fact that a reader will be </div>
+        <div class="items">It is a long established fact that a reader will </div>
+        <div class="items">It is a long established fact </div>
+    </div>
+</body>
+</html>
