@@ -9,7 +9,7 @@
         #panel {
             width: 500px;
             height: 500px;
-            border: 3px solid darksalmon;
+            border: 3px solid #999;
             position: relative;
         }
 
@@ -19,40 +19,50 @@
             top: 200px;
         }
     </style>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const $fish = document.querySelector('#fish');
+            // const $fish = document.querySelector('#fish');
+            const $fish = document.getElementById('fish');
             let x = 50;
             let y = 200;
             const LEFT_KEY = 37;
             const RIGHT_KEY = 39;
             const UP_KEY = 38;
             const DOWN_KEY = 40;
-
-            const move_avl = 50;
+            const move_val = 10;
             const panel_width = 500;
             const panel_height = 500;
             const fish_width = 120;
             const fish_height = 70;
 
             document.addEventListener('keydown', function (e) {
-                console.log("입력 키 코드 : " + e.keyCode);
+                console.log('입력 키 코드:' + e.keyCode);
                 switch (e.keyCode) {
-                    case LEFT_KEY:
-                        x -= move_avl;  // 좌
+                    case LEFT_KEY:                // 좌
+                        x -= move_val;
                         break;
-                    case RIGHT_KEY:
-                        x += move_avl;  // 우
+                    case RIGHT_KEY:                // 우
+                        x += move_val;
                         break;
-                    case UP_KEY:
-                        y -= move_avl;  // 상
+                    case UP_KEY:                     // 상
+                        y -= move_val;
                         break;
-                    case DOWN_KEY:
-                        y += move_avl;  // 하
+                    case DOWN_KEY:                // 하
+                        y += move_val;
                         break;
                 }
 
+                // style의 left값 가져오기
+                /*
+                let _left = $fish.style.left;
+                console.log('fish left=' + _left);
+                _left = _left.replace('px', '');    // px글자 제거
+                console.log('fish left=' + _left);
+                console.log('_left type=' + typeof(_left));
+                _left = Number(_left);
+                console.log('_left type=' + typeof(_left));
+                */
+                // panel영역을 벗어나지 못하도록 제약
                 if (x < 0)
                     x = 0;
                 else if (x > panel_width - fish_width)
@@ -74,7 +84,7 @@
 
 <body>
     <div id="panel">
-        <img src="/images2/fish.png" id="fish">
+        <img src="../../images2/fish.png" id="fish">
     </div>
 </body>
 
