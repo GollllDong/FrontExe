@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #heading {
+            color: blue;
+        }
+        #text {
+            color: gray;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">자바스크립트</h1>
+    <p id="text">위 텍스트를 클릭해 보세요</p>
+
+    <script>
+        const heading = document.querySelector("#heading");
+        heading.addEventListener('mouseover', function() {
+            const reply = confirm("배경 색상을 바꾸시겠습니까?");
+            heading.style.color = "skyblue";
+            console.log("색상이 변경되었습니다!!");
+        });
+        const text = document.querySelector("#text");
+        text.onclick = function() {
+            // onclick을 이벤트로 등록하면 모든 브라우저에서는 사용이 가능하지만
+            // 여러 개는 사용이 불가하고 마지막으로 동록된 이벤트만 사용된다.
+            text.style.color = "beige"; 
+           //alert("hi"); // p태그에서는 색이 바뀌지 않음
+        }
+
+    </script>
+</body>
+</html>
