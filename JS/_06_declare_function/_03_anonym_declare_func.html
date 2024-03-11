@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        func();
 
         /*
         아래의 '선언적 함수'가 먼저 '호이스팅'되고
@@ -15,12 +14,20 @@
         '선언적 함수'는 우리가 코드를 읽는 순서와 다른 순서로 함수가 선언됩니다.
         그러므로 우리가 코드를 읽는 순서와 같은 '익명 함수'를 더 선호합니다.
         */
+        func();
+        func1();
 
         func = function() {
             console.log("1번째 익명 함수입니다.");
         }
         function func() {
             console.log("2번째 선언적 함수입니다.");
+        }
+        function func() {
+            console.log("3번째 선언적 함수입니다.")
+        }
+        function func1() {
+            console.log("444번째 선언적 함수입니다.")
         }
 
         func(); // 1번째 익명 함수입니다.
