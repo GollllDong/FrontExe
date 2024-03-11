@@ -10,8 +10,45 @@
         클릭힌 횟수가 상자위에 출력될 것
         5초가 지나면 더 이상 클릭횟수 증가하지 않음.
      -->
+     <style>
+        .panel {
+            width: 600px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+        }
+        .panel #fish {
+            position: absolute;
+            left: 250px;
+            top: 150px;
+        }
+     </style>
+
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let count = 0;
+            const INTERVAL = 5000;
+            let isPlaying = true;
+            let $score = document.querySelector("#score");
+            let $fish = document.querySelector("#fish");
+
+            $fish.addEventListener("click", () => {
+                if(isPlaying) {
+                    $score.textContent = ++count;
+                }
+            });
+
+            setTimeout(() => {
+                isPlaying = false;
+                alert('게임이 종료되었습니다.');
+            }, INTERVAL);
+        });
+     </script>
 </head>
 <body>
-    
+    <div>현재 점수<span id="score">0</span></div>
+    <div class="panel">
+        <img src="/images2/fish.png" id="fish">
+    </div>
 </body>
 </html>

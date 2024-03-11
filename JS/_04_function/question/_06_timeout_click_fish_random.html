@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .panel {
+            width: 600px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+        }
+        .panel #fish {
+            position: absolute;
+            left: 250px;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>현재 점수<span id="score">0</span></div>
+    <div class="panel">
+        <img src="/images2/fish.png" id="fish">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let count = 0;
+            const TOTAL_TIME = 10000;     // 총 시간 (10초)
+            const RANDOM_INTERVAL = 1000; // 랜덤 위치 변경 간격 (1초)
+            let isPlaying = true;
+            let $score = document.querySelector("#score");
+            let $fish = document.querySelector("#fish");
+            let intervalId;
+
+            function randomMove() {
+                intervalId = setInterval(() => {
+                    let random_x = Math.random() * (600-120); // 랜덤한 x 위치
+                    let random_y = Math.random() * (400-70); // 랜덤한 y 위치
+                    $fish.style.left = random_x + "px";
+                    $fish.style.top = random_y + "px";
+                }, RANDOM_INTERVAL);
+            }
+
+            function endGame() {
+                isPlaying = false;
+                clearInterval(intervalId); // interval 제거
+                alert("게임이 종료되었습니다. 점수: " + count);
+            }
+
+            $fish.addEventListener("click", () => {
+                if(isPlaying) {
+                    $score.textContent = ++count;
+                }
+            });
+
+            randomMove();
+
+            setTimeout(endGame, TOTAL_TIME);
+        });
+    </script>
+</body>
+</html>
