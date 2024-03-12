@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 개행문자, \t, \n과 같은 앞뒤 공백 문자 제거
+        const stringA = `
+               메시지를 입력했는데 줄바꿈이 들어갔다.`;
+        const stringB = `   앞과 뒤에 공백이 들어갔다.  `;
+
+        console.log(stringA.length);
+        console.log(stringB.length);
+        console.log(stringA.trim());        // trim()으로 공백을 없애준다.
+        console.log(stringB.trim());        // trim()으로 공백을 없애준다.
+        console.log(stringA.trim().length);        // trim()으로 공백을 없애주고 길이 확인
+        console.log(stringB.trim().length);        // trim()으로 공백을 없애주고 길이 확인
+        console.log(stringA);
+        console.log(stringB);
+
+        // 문자열 자르기 : splie()
+        let input = `
+        일자, 달러, 엔, 유로
+        02, 1141.8, 1067.45, 1225, 33
+        03, 1148.8, 1377.45, 1235, 39
+        04, 1140.8, 1177.45, 1295, 38
+        05, 1145.8, 1087.45, 1255, 34
+        06, 1142.8, 1057.45, 1265, 37
+        `;
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
