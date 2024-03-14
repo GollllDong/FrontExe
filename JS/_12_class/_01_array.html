@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const students = [];
+
+        students.push({name : "홍길동", kor : 94, math : 100, eng : 24, sci : 88});
+        students.push({name : "임꺽정", kor : 67, math : 43, eng : 96, sci : 99});
+        students.push({name : "차돌바위", kor : 74, math : 60, eng : 87, sci : 53});
+        students.push({name : "장길산", kor : 85, math : 87, eng : 55, sci : 98});
+
+        const jsonStr = JSON.stringify(students, null, 2);
+        console.log(jsonStr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
